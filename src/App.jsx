@@ -68,9 +68,10 @@ const App = () => {
   };
   
 
-  const filterdPersons = persons.filter((person) =>
-    person.name.toLowerCase().includes(filter.toLowerCase())
+  const filteredPersons = persons.filter((person) =>
+  person.name && person.name.toLowerCase().includes(filter.toLowerCase())
   );
+
 
   return (
     <div>
@@ -90,7 +91,7 @@ const App = () => {
 
       <h3>Numbers</h3>
 
-      <Persons filterdPersons={filterdPersons} onDelete={deletePerson}/>
+      <Persons filterdPersons={filteredPersons} onDelete={deletePerson}/>
     </div>
   );
 };
